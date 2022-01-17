@@ -1,0 +1,72 @@
+{
+    "reportMetadata": {
+            "aggregates": [
+                "s!Account.Recurring_donor__c",
+                "s!AMOUNT",
+                "s!PROBABILITY",
+                "s!AGE",
+                "RowCount"
+            ],
+            "chart": null,
+            "crossFilters": [],
+            "currency": null,
+            "description": null,
+            "detailColumns": [
+                "Account.Recurring_donor__c",
+                "FULL_NAME",
+                "Account.Account_ID_18__c",
+                "ACCOUNT_NAME",
+                "CONTACT",
+                "Opportunity.Contact_ID_18__c",
+                "Opportunity.Opportunity_ID_18__c",
+                "OPPORTUNITY_NAME",
+                "STAGE_NAME",
+                "FISCAL_QUARTER",
+                "AMOUNT",
+                "PROBABILITY",
+                "AGE",
+                "CLOSE_DATE",
+                "CREATED_DATE",
+                "TYPE",
+                "CAMPAIGN_SOURCE",
+                "Account.Source__c"
+            ],
+            "developerName": "New_Donations_Report",
+            "division": null,
+            "folderId": "00D390000004PWDEA2",
+            "groupingsAcross": [],
+            "groupingsDown": [],
+            "hasDetailRows": true,
+            "hasRecordCount": true,
+            "historicalSnapshotDates": [],
+            "id": "00O3p0000061GJnEAM",
+            "name": "Weston - Donation Report",
+            "reportBooleanFilter": null,
+            "reportFilters": [],
+            "reportFormat": "TABULAR",
+            "reportType": {
+                "label": "Donations",
+                "type": "Opportunity"
+            },
+            "scope": "organization",
+            "showGrandTotal": true,
+            "showSubtotals": true,
+            "sortBy": [],
+            "standardDateFilter": {
+                "column": "CLOSE_DATE",
+                "durationValue": "CUSTOM",
+                "startDate": "2021-12-01",
+                "endDate": "2021-12-01"
+            },
+            "standardFilters": [
+                {
+                    "name": "open",
+                    "value": "all"
+                },
+                {
+                    "name": "probability",
+                    "value": ">0"
+                }
+            ]
+        }
+    }

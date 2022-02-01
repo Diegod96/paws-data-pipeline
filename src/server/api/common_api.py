@@ -5,7 +5,6 @@ from sqlalchemy.sql import text
 import requests
 import time
 from datetime import datetime
-from api.API_ingest.salesforce_api_handler import import_donation_data 
 
 try:
     from secrets_dict import SHELTERLUV_SECRET_TOKEN
@@ -386,8 +385,3 @@ def get_support_oview(matching_id):
             current_app.logger.debug('No SF contact IDs found for matching_id ' + str(matching_id))
             oview_fields['number_of_gifts'] = 0  # Marker for no data
             return jsonify(oview_fields)
-            
-@common_api.route("/api/internal/salesforce-donations-pull/<start_date>/<end_date>", methods=["GET"])
-def test_salesforce_donations_pull(start_date, end_date):
-    import_donation_data(start_date, end_date)
-    return jsonify(200)

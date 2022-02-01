@@ -1,0 +1,293 @@
+{
+    "attributes": {
+        "describeUrl": "/services/data/v37.0/analytics/reports/null/describe",
+        "instancesUrl": "/services/data/v37.0/analytics/reports/null/instances",
+        "reportId": null,
+        "reportName": "Weston - Donation Report",
+        "type": "Report"
+    },
+    "allData": true,
+    "factMap": {
+        "T!T": {
+            "aggregates": [
+                {
+                    "label": "3",
+                    "value": 3.0
+                },
+                {
+                    "label": "$25.0",
+                    "value": 472.65
+                },
+                {
+                    "label": "550%",
+                    "value": 1550.0
+                },
+                {
+                    "label": "29",
+                    "value": 29.0
+                },
+                {
+                    "label": "16",
+                    "value": 16
+                }
+            ],
+            "rows": [
+                {
+                    "dataCells": [
+                        {
+                            "label": "true",
+                            "value": true
+                        },
+                        {
+                            "label": "PAWS Development",
+                            "value": "0033c0000IBFO3899M"
+                        },
+                        {
+                            "label": "0013p00001pMpTKAA0",
+                            "value": "0013p00001pMpTKAA0"
+                        },
+                        {
+                            "label": "Homer Simpson Household",
+                            "value": "0013p00001pMpTKAA0"
+                        },
+                        {
+                            "label": "Homer Simpson",
+                            "value": "0033p00002UlZ15AAF"
+                        },
+                        {
+                            "label": "0033p00002UlZ15AAF",
+                            "value": "0033p00002UlZ15AAF"
+                        },
+                        {
+                            "label": "0063p00000zPI3iAAG",
+                            "value": "0063p00000zPI3iAAG"
+                        },
+                        {
+                            "label": "Homer Simpson Donation 1/29/2022",
+                            "value": "0033c0000IBFO3899M"
+                        },
+                        {
+                            "label": "Pledged",
+                            "value": "Pledged"
+                        },
+                        {
+                            "label": "Q1-2022",
+                            "value": "Q1-2022"
+                        },
+                        {
+                            "label": "$25.00",
+                            "value": {
+                                "amount": 25,
+                                "currency": null
+                            }
+                        },
+                        {
+                            "label": "50%",
+                            "value": 50
+                        },
+                        {
+                            "label": "29",
+                            "value": 29
+                        },
+                        {
+                            "label": "1/29/2022",
+                            "value": "2022-01-29"
+                        },
+                        {
+                            "label": "1/1/2022",
+                            "value": "2022-01-01"
+                        },
+                        {
+                            "label": "One-time",
+                            "value": "One-time"
+                        },
+                        {
+                            "label": "PAWS: Philadelphia Animal Welfare Society",
+                            "value": "0033c0000IBFO3899M"
+                        },
+                        {
+                            "label": "-",
+                            "value": null
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "groupingsAcross": {
+        "groupings": []
+    },
+    "groupingsDown": {
+        "groupings": []
+    },
+    "hasDetailRows": true,
+    "reportExtendedMetadata": {
+        "aggregateColumnInfo": {
+            "s!Account.Recurring_donor__c": {
+                "dataType": "int",
+                "label": "Sum of Recurring donor - A"
+            },
+            "s!AMOUNT": {
+                "dataType": "currency",
+                "label": "Sum of Amount"
+            },
+            "RowCount": {
+                "dataType": "int",
+                "label": "Record Count"
+            },
+            "s!AGE": {
+                "dataType": "int",
+                "label": "Sum of Age"
+            },
+            "s!PROBABILITY": {
+                "dataType": "percent",
+                "label": "Sum of Probability (%)"
+            }
+        },
+        "detailColumnInfo": {
+            "Account.Recurring_donor__c": {
+                "dataType": "boolean",
+                "label": "Recurring donor - A"
+            },
+            "FULL_NAME": {
+                "dataType": "string",
+                "label": "Opportunity Owner"
+            },
+            "Account.Account_ID_18__c": {
+                "dataType": "html",
+                "label": "Account ID 18"
+            },
+            "ACCOUNT_NAME": {
+                "dataType": "string",
+                "label": "Account Name"
+            },
+            "CONTACT": {
+                "dataType": "string",
+                "label": "Primary Contact"
+            },
+            "Opportunity.Contact_ID_18__c": {
+                "dataType": "html",
+                "label": "Contact ID 18"
+            },
+            "Opportunity.Opportunity_ID_18__c": {
+                "dataType": "html",
+                "label": "Opportunity ID 18"
+            },
+            "OPPORTUNITY_NAME": {
+                "dataType": "string",
+                "label": "Opportunity Name"
+            },
+            "STAGE_NAME": {
+                "dataType": "picklist",
+                "label": "Stage"
+            },
+            "FISCAL_QUARTER": {
+                "dataType": "string",
+                "label": "Fiscal Period"
+            },
+            "AMOUNT": {
+                "dataType": "currency",
+                "label": "Amount"
+            },
+            "PROBABILITY": {
+                "dataType": "percent",
+                "label": "Probability (%)"
+            },
+            "AGE": {
+                "dataType": "int",
+                "label": "Age"
+            },
+            "CLOSE_DATE": {
+                "dataType": "date",
+                "label": "Close Date"
+            },
+            "CREATED_DATE": {
+                "dataType": "datetime",
+                "label": "Created Date"
+            },
+            "TYPE": {
+                "dataType": "picklist",
+                "label": "Type"
+            },
+            "CAMPAIGN_SOURCE": {
+                "dataType": "string",
+                "label": "Primary Campaign Source"
+            },
+            "Account.Source__c": {
+                "dataType": "picklist",
+                "label": "Source"
+            }
+        },
+        "groupingColumnInfo": {}
+    },
+    "reportMetadata": {
+        "aggregates": [
+            "s!Account.Recurring_donor__c",
+            "s!AMOUNT",
+            "s!PROBABILITY",
+            "s!AGE",
+            "RowCount"
+        ],
+        "chart": null,
+        "crossFilters": [],
+        "currency": null,
+        "description": null,
+        "detailColumns": [
+            "Account.Recurring_donor__c",
+            "FULL_NAME",
+            "Account.Account_ID_18__c",
+            "ACCOUNT_NAME",
+            "CONTACT",
+            "Opportunity.Contact_ID_18__c",
+            "Opportunity.Opportunity_ID_18__c",
+            "OPPORTUNITY_NAME",
+            "STAGE_NAME",
+            "FISCAL_QUARTER",
+            "AMOUNT",
+            "PROBABILITY",
+            "AGE",
+            "CLOSE_DATE",
+            "CREATED_DATE",
+            "TYPE",
+            "CAMPAIGN_SOURCE",
+            "Account.Source__c"
+        ],
+        "developerName": null,
+        "division": null,
+        "folderId": "00D390000004PWDEA2",
+        "groupingsAcross": [],
+        "groupingsDown": [],
+        "hasDetailRows": true,
+        "hasRecordCount": true,
+        "historicalSnapshotDates": [],
+        "id": null,
+        "name": "Weston - Donation Report",
+        "reportBooleanFilter": null,
+        "reportFilters": [],
+        "reportFormat": "TABULAR",
+        "reportType": {
+            "label": "Donations",
+            "type": "Opportunity"
+        },
+        "scope": "organization",
+        "showGrandTotal": true,
+        "showSubtotals": true,
+        "sortBy": [],
+        "standardDateFilter": {
+            "column": "CLOSE_DATE",
+            "durationValue": "CUSTOM",
+            "endDate": "0022-01-29",
+            "startDate": "0022-01-29"
+        },
+        "standardFilters": [
+            {
+                "name": "open",
+                "value": "all"
+            },
+            {
+                "name": "probability",
+                "value": ">0"
+            }
+        ]
+    }
+}

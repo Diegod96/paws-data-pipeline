@@ -17,4 +17,4 @@ from api.API_ingest import salesforce_api_downloader, salesforce_api_importer
 
 def store_salesforce_donation_data(start_date, end_date):
     data = salesforce_api_downloader.download_donation_data(start_date, end_date)
-    salesforce_api_importer.store_data_in_db(data)
+    salesforce_api_importer.import_data(data)

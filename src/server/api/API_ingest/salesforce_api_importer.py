@@ -5,12 +5,22 @@ from sqlalchemy.dialects.postgresql import Insert
 from flask.globals import current_app
 import re
 
-def store_data_in_db(data):
-    metadata = MetaData()
-    sfd  = Table("salesforcedonations", metadata, autoload=True, autoload_with=engine)
+def import_data(data):
     Session = sessionmaker(engine) 
     session =  Session()
+    with session:
+        results = store_data_in_db(session,data)
+        session.commit()
+    print(results)
+    current_app.logger.info("---------------------------------   Stats  -------------------------------------------------")
+    current_app.logger.info("Total rows: " + str(results["row_count"]) + " Dupes: " + str(results["dupes"]))
+    current_app.logger.info("Other integrity exceptions: " + str(results["other_integrity"]) + " Other exceptions: " + str(results["other_exceptions"]))
+    
 
+def store_data_in_db(session, data):
+    metadata = MetaData()
+    sfd  = Table("salesforcedonations", metadata, autoload=True, autoload_with=engine)
+    
     # Stats for import
     dupes = 0
     other_integrity = 0
@@ -19,6 +29,7 @@ def store_data_in_db(data):
     
     rows = data["factMap"]["T!T"]["rows"]
     for row in rows:
+        row_count += 1
         insertable_row = {
             "recurring_donor": row["dataCells"][0]["value"],
             "primary_contact": row["dataCells"][1]["value"],
@@ -46,7 +57,11 @@ def store_data_in_db(data):
             other_exceptions += 1
             current_app.logger.error(e)
     
-    session.commit()   # Commit all inserted rows    
-    current_app.logger.info("---------------------------------   Stats  -------------------------------------------------")
-    current_app.logger.info("Total rows: " + str(row_count) + " Dupes: " + str(dupes))
-    current_app.logger.info("Other integrity exceptions: " + str(other_integrity) + " Other exceptions: " + str(other_exceptions))
+
+    return {
+        "row_count": row_count,
+        "dupes": dupes,
+        "other_integrity": other_integrity,
+        "other_exceptions": other_exceptions
+    }
+    

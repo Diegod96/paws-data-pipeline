@@ -3,7 +3,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Table,  MetaData, exc
 from sqlalchemy.dialects.postgresql import Insert
 from flask.globals import current_app
-import re
 
 def import_data(data):
     Session = sessionmaker(engine) 

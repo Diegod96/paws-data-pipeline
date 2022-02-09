@@ -1,7 +1,7 @@
 from api.api import internal_api
 from flask import jsonify, current_app
 from datetime import datetime
-from api.API_ingest import ingest_sources_from_api
+from api.API_ingest import ingest_sources_from_api, salesforce_api_downloader
 from rfm_funcs.create_scores import create_scores
 
 ###   Internal API endpoints can only be accessed from inside the cluster;
@@ -30,6 +30,10 @@ def ingest_raw_data():
 
     return jsonify({'outcome': 'OK'}), 200
 
+@internal_api.route("/api/salesforcetoken", methods=["GET"])
+def generate_api_token():
+    auth_header = salesforce_api_downloader.generate_jwt()
+    return jsonify(auth_header), 200
 
 @internal_api.route("/api/internal/create_scores", methods=["GET"])
 def hit_create_scores():

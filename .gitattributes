@@ -1,1 +1,1 @@
-server/bin eol=lf
+server/bin/* eol=lf

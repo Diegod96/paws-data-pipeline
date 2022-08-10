@@ -23,8 +23,14 @@ def initialize_salesforce_client():
         print("Error occurred while initializing salesforce client: " + str(e))
         
 def get_record(sf_client):
-    jane_doe = sf_client.query("SELECT Id, Name, Facebook_Page__c FROM Contact WHERE Id = '0032g00000Ukx9bAAB'")
-    print(jane_doe)
+    contact_record_query_result = sf_client.query("SELECT Id, Name, Facebook_Page__c FROM Contact WHERE Id = '0032g00000Ukx9bAAB'")
+    contact_records = contact_record_query_result["records"]
+    for contact in contact_records:
+        print("Contact Name: " + contact['Name'])
+        print("Contact Record Id: " + contact['Id'])
+        sf_client.Contact.update(contact['Id'], {'Email': 'test124@test.com'})
+        print("Updated Email Successfully")
+        
 
 def main():
     sf_client = initialize_salesforce_client()

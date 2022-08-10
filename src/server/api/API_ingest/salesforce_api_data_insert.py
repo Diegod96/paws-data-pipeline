@@ -21,9 +21,14 @@ def initialize_salesforce_client():
         return sf
     except Exception as e:
         print("Error occurred while initializing salesforce client: " + str(e))
+        
+def get_record(sf_client):
+    jane_doe = sf_client.query("SELECT Id, Name, Facebook_Page__c FROM Contact WHERE Id = '0032g00000Ukx9bAAB'")
+    print(jane_doe)
 
 def main():
     sf_client = initialize_salesforce_client()
+    get_record(sf_client)
      
 if __name__ == "__main__":
     main()

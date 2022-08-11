@@ -28,7 +28,7 @@ def get_record(sf_client):
     for contact in contact_records:
         print("Contact Name: " + contact['Name'])
         print("Contact Record Id: " + contact['Id'])
-        sf_client.Contact.update(contact['Id'], {'Email': 'test124@test.com'})
+        sf_client.Contact.update(contact['Id'], {'Email': 'test123@test.com'})
         print("Updated Email Successfully")
         
 

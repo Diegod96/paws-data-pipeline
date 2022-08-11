@@ -1,7 +1,7 @@
 
 import secrets_dict
 from simple_salesforce import Salesforce
-from api.API_ingest import salesforce_api_data_downloader, salesforce_api_importer
+import salesforce_api_data_downloader
 
 # Initialize Salesforce client using simple_salesforce library
 def initialize_salesforce_client():
@@ -20,7 +20,6 @@ def initialize_salesforce_client():
 
 # Store Salesforce donation data within a given start and end date
 def store_salesforce_donation_data(start_date, end_date):
-    print("Retrieving Salesforce donation data...")
     print("Start Date: %s" % start_date)
     print("End Date: %s" % end_date)
     sf_client = initialize_salesforce_client()
